@@ -1,7 +1,9 @@
 console.log('hello');
 
-function myPromise(input)
+/* function myPromise(input)
 {  return new Promise( function (resolve, reject) {
+
+       const fatchedData = fetch() 
         if( typeof  input !== "number" )
         {   
            // const reason = new Error("error");   //does not work here
@@ -13,8 +15,8 @@ function myPromise(input)
        }
    )
 }
-
-function PromiseFunction (input)
+ */
+/* function PromiseFunction (input)
 {
     return new Promise((resolve,reject) => {
         setTimeout(() =>
@@ -27,7 +29,7 @@ function PromiseFunction (input)
             resolve(input);
         },1000);
     })
-}
+} */
 
 
 
@@ -59,6 +61,7 @@ const data = async () => {
     )
     
     let names = await result.json();
+    
     // Create array of object keys, ["311", "310", ...]
     const keys = Object.keys(names)
 
@@ -71,7 +74,7 @@ const data = async () => {
     // Use the key to get the corresponding name from the "names" object
     const name = names[randKey]
 
-   // console.log( name)
+    console.log( name)
     return name;
 }
  // data();
@@ -81,8 +84,8 @@ const data = async () => {
 
  async function catData()
  {
-    let data1 = await data();
-
+    let data1 = await data();     //'async' key word wrapped "string"- name into promise
+    console.log(" Data1: ", data1);
    // console.log("Cat Data: ", data1["text"]);
     let myCat = document.querySelector("#myCat");
     myCat.innerHTML =  data1["text"] ;
